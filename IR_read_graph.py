@@ -1,10 +1,7 @@
 from PIL import Image, ImageTk
+import sys
 
-'''Change image opened here<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'''
-#img = Image.open('90-01-7.bmp')
-#img = Image.open('99-05-8.bmp')
-img = Image.open('556-18-3.bmp')
-'''<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'''
+img = Image.open(sys.argv[1])
 imgdata=list(img.getdata())#the pixels from the image
 
 #this with and height seems to be standard for all IR samples
