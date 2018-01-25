@@ -1,6 +1,12 @@
 from PIL import Image, ImageTk
 import sys
 
+'''
+Open the source image
+Crop the image
+Save the cropped image
+'''
+
 #open image from user's commandline argument
 img = Image.open(sys.argv[1])
 imgdata=list(img.getdata())#the pixels from the image
@@ -34,6 +40,13 @@ Height=targetRect[3]-targetRect[2]+1
 img = Image.new('RGB', (Width, Height))
 img.putdata(graph)
 img.save('graph.png')
+
+'''
+Create data list by reading pixels from graph
+    -each entry in data is the range over wich each
+     column has black pixels
+Save data to file
+'''
 
 def pix(x,y):#checks if the pixel at x,y is black
     r,g,b=graph[y*Width+x]
